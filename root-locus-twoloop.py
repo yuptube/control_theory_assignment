@@ -4,10 +4,10 @@ import control as ctrl
 
 # Define K  and find closed-loop poles
 K = 600
-Kt = 1 # Kt >0.06724
+Kt = 0 # Kt >0.06724
 # Define the open-loop transfer function G(s)H(s)
 num = [1* K, 3*K]  # (s + 3)
-den = [1, 14, K* Kt + 45, 50+ K+K * 3*Kt ,1800]  # (s+10)(s)(s^2+4s+5)
+den = [1, 14, K* Kt + 45, 50+ K+K * 3*Kt ,1800]  # (s+10)(s)(s^2+4s+5) + K(s+3)(kt+1)
 
 # Create the transfer function
 G = ctrl.TransferFunction(num, den)
