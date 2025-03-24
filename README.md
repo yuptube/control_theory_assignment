@@ -13,3 +13,6 @@
 you should be in the environment
 - to run the script 
 ```poetry run <python script name>.py```
+
+## Usage 
+Follow the notebook and run the different configuration , For part A-C , use the 1-loop configuration and 2-loop for the rest of the document
