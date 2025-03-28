@@ -82,13 +82,6 @@ class PlotRootLocus:
                 y_asymp = [0, asymptote_length * np.sin(angle)]
                 plt.plot(x_asymp, y_asymp, 'r--', linewidth=1.5, label=f"Asymptote {int(np.degrees(angle))}°")
         
-        plt.figure(figsize=(8, 6))   
-        plt.title(f"Root Locus Plot ")
-        plt.xlabel("Real Axis")
-        plt.xlim(-20, 5)
-        plt.ylabel("Imaginary Axis")
-        plt.grid()
-        plt.show()
     
     def plot_transfer_function_after_feedback(self):
         """
@@ -268,9 +261,10 @@ if __name__ == "__main__":
     D=ctrl.TransferFunction([K], [1, 10])
     I=ctrl.TransferFunction([1], [1, 0])
     # Create and use the PlotRootLocus class
-    system = PlotRootLocus(D,G,I,K,kt_max )
+    system = PlotRootLocus(D,G,I,K)
     _ , _ , omega_n = system.compute_max_damping_factor()
     print(f"omega_n is {omega_n:.6f} "   )
+    system.plot_root_locus()
     # print(system.get_ayampototes_angle_and_alpha())
     print(system.get_root_locus())
     system.vis_max_zeta_plot_bode()
