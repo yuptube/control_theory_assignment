@@ -10,8 +10,10 @@
 - To use poetry , run the following
  ```poetry install pyproject.toml```
  ```poetry shell```
-you should be in the environment
-- to run the script 
-```poetry run <python script name>.py```
+ ```poetry update```
+- After all that , run the ``vis_rlcous.ipynb`` to obtain the graph !
 ## Usage 
-Follow the notebook and run the different configuration , For part A-C , use the 1-loop configuration and 2-loop for the rest of the document
+Follow the notebook and run the different configuration.
+
+## MATLAB implementation 
+To use the MATLAB variant , add subpath the the workspace and run the ``control_sys.m`` script for getting the different graph 
