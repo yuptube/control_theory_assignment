@@ -1,11 +1,20 @@
-K = 600 ; % K<143
+K = 1200; % K<143
 kt = 0.0717;
-kt_max = 0.305386 ;
-G=tf([1,3], [1,4, 5]);
-D=tf(K, [1, 10]);
-I=tf(1, [1, 0]);
-system = PlotRootLocus(D,G,I,K,1);
-system.plot_bode();
-system.plot_root_locus();
-system.plot_step_response();
-%system.rltool_vis();
+kt_max = 0.305386;
+s = tf('s');
+G= (s+3)/(s^2+4*s+5);
+D = K/(s+10);
+I = 1/s;
+%Mp = (s^2+13*s+30) / (2*s^5+28*s^4+90 * s^3 + (100+2*K)*s^2+6*K*s);
+system = PlotRootLocus(D,G,I,K,NaN);
+%system.plot_step_response();
+%system.get_transfer_function();
+%tf_str = evalc('system.get_transfer_function()');
+%fprintf('the transfer function is /n%s' ,tf_str );
+%total = system.get_transfer_function()+Mp;
+%[y,t]=step(total);
+%plot(t,y);
+%system.plot_bode();
+%system.plot_root_locus();
+%system.plot_step_response();
+system.rltool_vis();
