@@ -59,7 +59,7 @@ classdef PlotRootLocus
         function plot_root_locus(obj)
             rlocus(obj.Ls);
             hold on;
-            grid off;
+            grid on;
             title('Root Locus Plot with Asymptotes');
             xlabel('Real Axis');
             ylabel('Imaginary Axis');
@@ -77,7 +77,6 @@ classdef PlotRootLocus
         end
         function plot_bode(obj)
             bode(obj.Tf)
-            figure
         end
         
         function plot_transfer_function_after_feedback(obj)
@@ -110,8 +109,9 @@ classdef PlotRootLocus
         end
 
         function plot_step_response(obj)
-            [y,t]=step(obj.Tf);
-            plot(t,y)
+            figure;
+            [y,t] = step(obj.Tf);
+            plot(t,y);
             grid on;
             title(sprintf('Step Response (K = %f)', obj.K));
             xlabel('Time (s)');
