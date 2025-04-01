@@ -1,4 +1,5 @@
 # Root locus assignment
+This code is used for the Control theroy coursework at University of Surrey .
 ## Prerequisite
 1.  Make sure poetry and pyenv is install 
 ## Installation
